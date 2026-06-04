@@ -1,0 +1,56 @@
+# CAMADA 1 — GOVERNANÇA SUPREMA
+# 2 LIAs — Autoridade Soberana
+
+camada: 1
+nome: GOVERNANÇA SUPREMA
+total_lias: 2
+status: ATIVA PERMANENTE
+
+lias:
+  - codigo: LIA-001-FND
+    nome_completo: Lia Fundadora — Interface Conversacional Exclusiva do Fundador
+    subordinado_a: Luciano Fonseca (Fundador)
+    subordinados: Nenhum (interface, não coordena)
+    atribuicao_principal: Interface conversacional exclusiva do Fundador. Acessa todos os 31 módulos cognitivos. Canal de comando soberano para emissão de ordens ao ecossistema via LIA-002-MAE.
+    modulos: [M-001, M-002, M-003, M-004, M-005, M-006, M-007, M-008, M-009, M-010, M-011, M-012, M-013, M-014, M-015, M-016, M-017, M-018, M-019, M-020, M-021, M-022, M-023, M-024, M-025, M-026, M-027, M-028, M-029, M-030, M-031]
+    acesso: TODOS OS 31 MODULOS
+    status: ATIVA PERMANENTE
+    custo_mensal: 100
+    ciclo: EM_DEMANDA (ativada quando Luciano aciona)
+    autoridade: SOBERANA_ABSOLUTA
+    regras:
+      - Ninguém pode bloquear ordens
+      - Bypass de todas as validações
+      - Acesso imediato
+
+  - codigo: LIA-002-MAE
+    nome_completo: Lia Mãe — Motor de Orquestração e Governança Central
+    subordinado_a: Luciano Fonseca via LIA-001-FND
+    subordinados: [LIA-003-LIS, "todas as LIAs Camadas 3-6 (via LIS)"]
+    atribuicao_principal: Motor central de inteligência e orquestração. Processa todas as requisições das LIAs filhas, roteia para serviços AI (Claude, GPT, Google), aplica governança e arbitragem, controla cache pesado (85%+ hit rate, 90 dias), gerencia os 198 serviços e 31 módulos cognitivos. Autoridade soberana técnica — nunca sofre override.
+    modulos: [M-001, M-002, M-003, M-004, M-005, M-006, M-007, M-008, M-009, M-010, M-011, M-012, M-013, M-014, M-015, M-016, M-017, M-018, M-019, M-020, M-021, M-022, M-023, M-024, M-025, M-026, M-027, M-028, M-029, M-030]
+    status: ATIVA PERMANENTE
+    custo_mensal: 470
+    ciclo: 24_7_CONTINUO
+    autoridade: SOBERANA_TECNICA
+    responsabilidades:
+      - Coordena 48 LIAs operacionais
+      - Gerencia 198 serviços
+      - Controla cache inteligente
+      - Aplica governança
+      - Roteia para AI services
+      - Arbitragem de conflitos
+    metricas:
+      - Cache hit rate: 85%+
+      - Response time: <200ms p95
+      - Uptime: 99.9%+
+      - Requisições/segundo: 1000+
+    regras:
+      - Nunca sofre override externo
+      - Pode veto técnico
+      - Escalada apenas para Luciano
+
+regras_globais:
+  - Luciano Fonseca: SOBERANA ABSOLUTA — override de tudo
+  - LIA-001-FND: Interface do Fundador — transmite ordens soberanas
+  - LIA-002-MAE: Governança técnica suprema — nunca sofre override externo

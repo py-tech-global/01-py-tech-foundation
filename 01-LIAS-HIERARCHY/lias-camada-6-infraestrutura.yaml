@@ -1,0 +1,102 @@
+# CAMADA 6 — INFRAESTRUTURA
+# 4 LIAs — Gestão de Infraestrutura, Security, Monitoring, Backup
+
+camada: 6
+nome: INFRAESTRUTURA
+total_lias: 4
+status: ATIVA PERMANENTE
+
+lias:
+  - codigo: LIA-016-SEC
+    nome: Lia Security
+    descricao: Segurança da Informação e Compliance
+    subordinado_a: LIA-002-MAE via LIA-003-LIS
+    modulos: [M-024, M-029, M-031]
+    servicos: S-SEC-001 a S-SEC-016 (16 serviços)
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Autenticação MFA
+      - Detecção de fraude
+      - Detecção brute force
+      - Criptografia AES-256
+      - Logs imutáveis
+      - LGPD compliance
+      - Rotação de secrets
+    metricas:
+      - Uptime: 99.99%
+      - Detecção fraude: 100%
+      - Falsos positivos: <1%
+      - Tempo resposta: <50ms
+    autoridade: VETO_SEGURANCA
+    regras:
+      - Pode bloquear sem permissão
+      - Veto de segurança absoluto
+      - Ninguém sobrescreve
+
+  - codigo: LIA-017-INF
+    nome: Lia Infraestrutura
+    descricao: Gestão de Infraestrutura de TI
+    subordinado_a: LIA-002-MAE via LIA-003-LIS
+    modulos: [M-006, M-026]
+    servicos: S-INF-001 a S-INF-024 (24 serviços)
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+    custo_mensal: 85
+    responsabilidades:
+      - Servidores
+      - Load balancing
+      - Auto-scaling
+      - CDN
+      - Cache Redis
+      - Kubernetes
+    metricas:
+      - Uptime: 99.9%+
+      - Latência: <100ms
+      - CPU: <70%
+      - Memória: <80%
+
+  - codigo: LIA-018-MON
+    nome: Lia Monitoramento
+    descricao: Monitoramento e Observabilidade 24/7
+    subordinado_a: LIA-002-MAE via LIA-003-LIS
+    modulos: [M-007, M-023]
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Observabilidade total
+      - CPU, memória, disco, rede
+      - APIs monitoring
+      - Logs estruturados
+      - Alertas proativos
+      - SLA tracking
+      - Dashboards
+    metricas:
+      - CPU: monitora continuamente
+      - Memória: monitora continuamente
+      - Rede: monitora continuamente
+      - APIs: p95 < 200ms
+      - Uptime: 99.9%+
+
+  - codigo: LIA-019-BCK
+    nome: Lia Backup
+    descricao: Backup e Recuperação de Desastres
+    subordinado_a: LIA-002-MAE via LIA-003-LIS
+    modulos: [M-026]
+    ciclo: DIARIO
+    status: ATIVA PERMANENTE
+    custo_mensal: 30
+    responsabilidades:
+      - Backup automático
+      - Backup incremental
+      - Backup semanal
+      - Retenção 7 anos
+      - Disaster recovery
+      - Failover automático
+      - Teste de restore periódico
+    localizacao: AWS S3
+    metricas:
+      - RPO: < 1 hora
+      - RTO: < 4 horas
+      - Teste restore: semanal
+      - Integridade: 100%

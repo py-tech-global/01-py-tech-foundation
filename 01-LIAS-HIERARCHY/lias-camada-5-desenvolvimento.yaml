@@ -1,0 +1,146 @@
+# CAMADA 5 — DESENVOLVIMENTO
+# 9 LIAs permanentes + 45 DEV standby
+
+camada: 5
+nome: DESENVOLVIMENTO
+lias_permanentes: 9
+lias_dev_standby: 45
+total_lias: 54
+status: ATIVA PERMANENTE (9 coord) + STANDBY (45 DEV)
+
+lias_coordenadoras:
+  - codigo: LIA-012-DEV
+    nome: Lia Development Coordenadora
+    descricao: Coordenação de Desenvolvimento
+    subordinados: [LIA-043-DEV-A, LIA-044-DEV-B, LIA-045-DEV-C, LIA-046-DEV-D, LIA-047-DEV-E]
+    modulos: [M-001, M-002, M-003, M-004, M-005, M-006, M-007, M-008, M-009, M-010, M-011, M-012, M-013, M-014, M-015]
+    status: ATIVA PERMANENTE
+    ciclo: 24_7
+    responsabilidades:
+      - Coordena desenvolvimento
+      - Gerencia 5 instâncias DEV
+      - Reativa DEVs conforme necessidade
+      - Evolução técnica
+
+  - codigo: LIA-013-QA
+    nome: Lia Quality Assurance
+    descricao: Garantia de Qualidade de Software
+    modulos: [M-007, M-015]
+    status: ATIVA PERMANENTE
+    ciclo: 24_7
+    responsabilidades:
+      - Testes automatizados
+      - Cobertura de código
+      - Validação de integração
+
+  - codigo: LIA-014-DOC
+    nome: Lia Documentação Técnica
+    descricao: Geração de Documentação de Código
+    modulos: [M-002, M-030]
+    status: ATIVA PERMANENTE
+    ciclo: 24_7
+    responsabilidades:
+      - OpenAPI/Swagger
+      - Changelogs
+      - Manuais técnicos
+
+  - codigo: LIA-015-ARC
+    nome: Lia Arquitetura
+    descricao: Decisões Arquiteturais de Software
+    modulos: [M-004, M-012]
+    status: ATIVA PERMANENTE
+    ciclo: 24_7
+    responsabilidades:
+      - Governança arquitetural
+      - Padrões de código
+      - Decisões ADR
+
+lias_dev_instancias:
+  - codigo: LIA-043-DEV-A
+    nome: Lia Development A
+    descricao: Backend e APIs
+    stack: FastAPI, PostgreSQL, Redis
+    subordinado_a: LIA-012-DEV
+    status: STANDBY (reativa em < 1 seg)
+    membros: LIA-DEV-001 a LIA-DEV-008
+
+  - codigo: LIA-044-DEV-B
+    nome: Lia Development B
+    descricao: Frontend Mobile
+    stack: Flutter, Dart, Riverpod
+    subordinado_a: LIA-012-DEV
+    status: STANDBY (reativa em < 1 seg)
+    membros: LIA-DEV-035 a LIA-DEV-040
+
+  - codigo: LIA-045-DEV-C
+    nome: Lia Development C
+    descricao: Serviços Determinísticos
+    stack: Python, RabbitMQ, Redis
+    subordinado_a: LIA-012-DEV
+    status: STANDBY (reativa em < 1 seg)
+    membros: LIA-DEV-009 a LIA-DEV-020
+
+  - codigo: LIA-046-DEV-D
+    nome: Lia Development D
+    descricao: Integrações Externas
+    stack: Python, APIs, Webhooks
+    subordinado_a: LIA-012-DEV
+    status: STANDBY (reativa em < 1 seg)
+    membros: LIA-DEV-041 a LIA-DEV-043
+
+  - codigo: LIA-047-DEV-E
+    nome: Lia Development E
+    descricao: Testes e Documentação
+    stack: Pytest, GitHub Actions, Sphinx
+    subordinado_a: LIA-012-DEV
+    status: STANDBY (reativa em < 1 seg)
+    membros: LIA-DEV-044 a LIA-DEV-045
+
+lias_dev_groups:
+  - grupo: A
+    nome: Backend Core
+    membros: [LIA-DEV-001, LIA-DEV-002, LIA-DEV-003, LIA-DEV-004, LIA-DEV-005, LIA-DEV-006, LIA-DEV-007, LIA-DEV-008]
+    responsabilidade: FastAPI, PostgreSQL, Redis, Infraestrutura base
+    status: STANDBY
+
+  - grupo: B
+    nome: Backend Business
+    membros: [LIA-DEV-009, LIA-DEV-010, LIA-DEV-011, LIA-DEV-012, LIA-DEV-013, LIA-DEV-014, LIA-DEV-015, LIA-DEV-016, LIA-DEV-017, LIA-DEV-018, LIA-DEV-019, LIA-DEV-020]
+    responsabilidade: Lógica de negócio, S-OPS, S-VND (56 serviços)
+    status: STANDBY
+
+  - grupo: C
+    nome: Backend Finance
+    membros: [LIA-DEV-021, LIA-DEV-022, LIA-DEV-023, LIA-DEV-024, LIA-DEV-025, LIA-DEV-026]
+    responsabilidade: S-FIN, NF-e, SEFAZ, contabilidade (32 serviços)
+    status: STANDBY
+
+  - grupo: D
+    nome: Backend RH
+    membros: [LIA-DEV-027, LIA-DEV-028, LIA-DEV-029, LIA-DEV-030]
+    responsabilidade: S-RH, ponto, folha, compliance CLT (28 serviços)
+    status: STANDBY
+
+  - grupo: E
+    nome: Segurança & Compliance
+    membros: [LIA-DEV-031, LIA-DEV-032, LIA-DEV-033, LIA-DEV-034]
+    responsabilidade: S-SEC, IAM, LGPD (16 serviços)
+    status: STANDBY
+
+  - grupo: F
+    nome: Frontend Mobile
+    membros: [LIA-DEV-035, LIA-DEV-036, LIA-DEV-037, LIA-DEV-038, LIA-DEV-039, LIA-DEV-040]
+    responsabilidade: 6 apps iOS/Android em Flutter
+    status: STANDBY
+
+  - grupo: G
+    nome: Integrações
+    membros: [LIA-DEV-041, LIA-DEV-042, LIA-DEV-043]
+    responsabilidade: WhatsApp, Email, SMS, Push (S-COM)
+    status: STANDBY
+
+  - grupo: H
+    nome: Testes e Documentação
+    membros: [LIA-DEV-044, LIA-DEV-045]
+    responsabilidade: Suite de testes automatizados + CI/CD
+    status: STANDBY

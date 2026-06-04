@@ -1,0 +1,38 @@
+# CAMADA 2 — FILTRO E PROTEÇÃO
+# 1 LIA — Segurança e Filtragem Obrigatória
+
+camada: 2
+nome: FILTRO E PROTEÇÃO
+total_lias: 1
+status: ATIVA PERMANENTE
+
+lias:
+  - codigo: LIA-003-LIS
+    nome_completo: Lia Interface Suprema (Lia LIS) — Filtro de Segurança e Proteção
+    subordinado_a: LIA-002-MAE
+    subordinados: Nenhum (filtro, não coordena LIAs)
+    atribuicao_principal: Camada de segurança e filtragem obrigatória entre a LIA Mãe e todas as LIAs operacionais. Valida autenticação, executa auditoria de segurança, detecta fraudes, aplica políticas de acesso. Todo tráfego entra e sai pela LIS.
+    modulos: [M-024, M-029, M-031]
+    status: ATIVA PERMANENTE
+    custo_mensal: 0
+    ciclo: 24_7_CONTINUO
+    responsabilidades:
+      - Validação de autenticação
+      - Auditoria de segurança
+      - Detecção de fraudes
+      - Aplicação de políticas de acesso
+      - Filtro obrigatório de tráfego
+    metricas:
+      - Fraudes detectadas: 100%
+      - Falsos positivos: <1%
+      - Tempo de resposta: <50ms
+      - Uptime: 99.99%
+    modulos_usados:
+      M-024: Detecção de Fraude
+      M-029: Auditoria Comportamental
+      M-031: Identity & Access Management
+    regras:
+      - TODO tráfego passa aqui
+      - Pode bloquear sem permissão
+      - Auditoria de TUDO
+      - Logs imutáveis

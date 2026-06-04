@@ -1,0 +1,159 @@
+# CAMADA 3 — GESTÃO EMPRESARIAL
+# 17 LIAs — 4 Coordenadoras + 13 Subordinadas
+
+camada: 3
+nome: GESTÃO EMPRESARIAL
+total_lias: 17
+coordenadasoras: 4
+subordinadas: 13
+status: ATIVA PERMANENTE
+
+lias_coordenadoras:
+  - codigo: LIA-004-ADM
+    nome: Lia Administrativa
+    descricao: Coordenação de Gestão Administrativa Geral
+    subordinados: [LIA-020-DOC, LIA-021-CNT, LIA-022-JUR]
+    modulos: [M-002, M-014, M-026]
+    servicos: S-ADM-001 a S-ADM-018 (18 serviços)
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Documentação
+      - Contratos
+      - Assuntos jurídicos
+
+  - codigo: LIA-005-FIN
+    nome: Lia Financeira
+    descricao: Coordenação de Gestão Financeira Completa
+    subordinados: [LIA-023-CTB, LIA-024-FLC, LIA-025-FCT, LIA-026-CNC]
+    modulos: [M-004, M-005, M-024]
+    servicos: S-FIN-001 a S-FIN-032 (32 serviços)
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Contabilidade
+      - Fluxo de caixa
+      - Faturamento/NF-e
+      - Conciliação bancária
+
+  - codigo: LIA-006-RH
+    nome: Lia Recursos Humanos
+    descricao: Coordenação de Gestão de Pessoas
+    subordinados: [LIA-027-TOP, LIA-028-PNT, LIA-029-TRN, LIA-030-BNF]
+    modulos: [M-003, M-011, M-028]
+    servicos: S-RH-001 a S-RH-028 (28 serviços)
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Compliance trabalhista
+      - Ponto eletrônico
+      - Treinamentos
+      - Benefícios
+
+  - codigo: LIA-007-MKT
+    nome: Lia Marketing
+    descricao: Coordenação de Marketing e Comunicação
+    subordinados: [LIA-031-CMP, LIA-032-SOC, LIA-033-CRM]
+    modulos: [M-002, M-009, M-021]
+    status: ATIVA PERMANENTE
+    responsabilidades:
+      - Campanhas
+      - Redes sociais
+      - CRM
+
+lias_subordinadas:
+  administrativas:
+    - codigo: LIA-020-DOC
+      nome: Lia Documentos
+      descricao: Gestão de Documentação Empresarial
+      subordinado_a: LIA-004-ADM
+      modulos: [M-002, M-026]
+      servicos: S-DOC-001 a S-DOC-006
+
+    - codigo: LIA-021-CNT
+      nome: Lia Contratos
+      descricao: Gestão de Contratos e Acordos
+      subordinado_a: LIA-004-ADM
+      modulos: [M-002, M-011, M-026]
+      servicos: S-CNT-001 a S-CNT-004
+
+    - codigo: LIA-022-JUR
+      nome: Lia Jurídico
+      descricao: Suporte Jurídico e Compliance
+      subordinado_a: LIA-004-ADM
+      modulos: [M-011, M-029]
+
+  financeiras:
+    - codigo: LIA-023-CTB
+      nome: Lia Contabilidade
+      descricao: Gestão Contábil
+      subordinado_a: LIA-005-FIN
+      modulos: [M-005, M-024]
+      servicos: S-FIN-001 a S-FIN-008
+
+    - codigo: LIA-024-FLC
+      nome: Lia Fluxo de Caixa
+      descricao: Gestão de Fluxo de Caixa
+      subordinado_a: LIA-005-FIN
+      modulos: [M-005, M-023]
+      servicos: S-FIN-009 a S-FIN-014
+
+    - codigo: LIA-025-FCT
+      nome: Lia Faturamento
+      descricao: Gestão de Faturamento e Notas Fiscais
+      subordinado_a: LIA-005-FIN
+      modulos: [M-002, M-024]
+      servicos: S-FIN-015 a S-FIN-020
+
+    - codigo: LIA-026-CNC
+      nome: Lia Conciliação
+      descricao: Conciliação Bancária e Financeira
+      subordinado_a: LIA-005-FIN
+      modulos: [M-007, M-024]
+      servicos: S-FIN-021 a S-FIN-024
+
+  rh:
+    - codigo: LIA-027-TOP
+      nome: Lia Trabalhador Operacional
+      descricao: Certificação e Compliance Trabalhista
+      subordinado_a: LIA-006-RH
+      modulos: [M-011, M-029]
+      servicos: S-RH-001 a S-RH-008
+
+    - codigo: LIA-028-PNT
+      nome: Lia Ponto Eletrônico
+      descricao: Gestão de Ponto e Jornada de Trabalho
+      subordinado_a: LIA-006-RH
+      modulos: [M-007, M-023]
+      servicos: S-RH-009 a S-RH-014
+
+    - codigo: LIA-029-TRN
+      nome: Lia Treinamento
+      descricao: Gestão de Treinamento e Desenvolvimento
+      subordinado_a: LIA-006-RH
+      modulos: [M-002, M-025]
+      servicos: S-RH-015 a S-RH-019
+
+    - codigo: LIA-030-BNF
+      nome: Lia Benefícios
+      descricao: Gestão de Benefícios e Programas
+      subordinado_a: LIA-006-RH
+      modulos: [M-004, M-009]
+      servicos: S-RH-020 a S-RH-022
+
+  marketing:
+    - codigo: LIA-031-CMP
+      nome: Lia Campanhas
+      descricao: Gestão de Campanhas de Marketing
+      subordinado_a: LIA-007-MKT
+      modulos: [M-002, M-009, M-021]
+
+    - codigo: LIA-032-SOC
+      nome: Lia Social Media
+      descricao: Gestão de Redes Sociais
+      subordinado_a: LIA-007-MKT
+      modulos: [M-002, M-003, M-021]
+
+    - codigo: LIA-033-CRM
+      nome: Lia Relacionamento
+      descricao: Gestão de Relacionamento com Cliente (CRM)
+      subordinado_a: LIA-007-MKT
+      modulos: [M-001, M-009]
+      servicos: S-ADM-011 a S-ADM-015

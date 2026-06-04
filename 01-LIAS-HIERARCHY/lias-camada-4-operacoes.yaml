@@ -1,0 +1,121 @@
+# CAMADA 4 — OPERAÇÕES
+# 11 LIAs — 4 Coordenadoras + 7 Subordinadas
+
+camada: 4
+nome: OPERAÇÕES
+total_lias: 11
+coordenadasoras: 4
+subordinadas: 7
+status: ATIVA PERMANENTE
+
+lias_coordenadoras:
+  - codigo: LIA-008-OPS
+    nome: Lia Operações
+    descricao: Coordenação de Operações Diárias
+    subordinados: [LIA-034-VOR, LIA-035-PED, LIA-036-EST]
+    modulos: [M-021, M-023, M-027]
+    servicos: S-OPS-001 a S-OPS-038 (38 serviços)
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+
+  - codigo: LIA-009-QLD
+    nome: Lia Qualidade
+    descricao: Coordenação de Controle de Qualidade
+    subordinados: [LIA-037-AUD, LIA-038-SAT]
+    modulos: [M-007, M-015, M-029]
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+
+  - codigo: LIA-010-LOG
+    nome: Lia Logística
+    descricao: Coordenação de Logística e Entregas
+    subordinados: [LIA-039-ENT, LIA-040-ROT]
+    modulos: [M-006, M-012]
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+
+  - codigo: LIA-011-VND
+    nome: Lia Vendas
+    descricao: Coordenação de Vendas e Atendimento
+    subordinados: [LIA-041-ATD, LIA-042-PRC]
+    modulos: [M-001, M-009, M-013]
+    servicos: S-VND-001 a S-VND-018 (18 serviços)
+    ciclo: 24_7
+    status: ATIVA PERMANENTE
+
+lias_subordinadas:
+  operacoes:
+    - codigo: LIA-034-VOR
+      nome: Lia VORA (Visual Operations Recognition)
+      descricao: Computer vision para validação de processos operacionais
+      subordinado_a: LIA-008-OPS
+      modulos: [M-021, M-007]
+      servicos: S-OPS-029 a S-OPS-036
+      ciclo: 24_7
+
+    - codigo: LIA-035-PED
+      nome: Lia Pedidos
+      descricao: Gestão de Pedidos
+      subordinado_a: LIA-008-OPS
+      modulos: [M-001, M-027]
+      servicos: S-OPS-001 a S-OPS-008
+      ciclo: 24_7
+
+    - codigo: LIA-036-EST
+      nome: Lia Estoque
+      descricao: Gestão de Estoque e Inventário
+      subordinado_a: LIA-008-OPS
+      modulos: [M-005, M-023]
+      servicos: S-OPS-017 a S-OPS-028
+      ciclo: 24_7
+
+  qualidade:
+    - codigo: LIA-037-AUD
+      nome: Lia Auditoria
+      descricao: Auditoria de Qualidade
+      subordinado_a: LIA-009-QLD
+      modulos: [M-029, M-007]
+      servicos: S-INF-001 a S-INF-006
+      ciclo: 24_7
+
+    - codigo: LIA-038-SAT
+      nome: Lia Satisfação
+      descricao: Gestão de Satisfação do Cliente
+      subordinado_a: LIA-009-QLD
+      modulos: [M-003, M-015]
+      servicos: S-INF-007 a S-INF-012
+      ciclo: 24_7
+
+  logistica:
+    - codigo: LIA-039-ENT
+      nome: Lia Entregas
+      descricao: Gestão de Entregas
+      subordinado_a: LIA-010-LOG
+      modulos: [M-006, M-023]
+      servicos: S-OPS-009 a S-OPS-013
+      ciclo: 24_7
+
+    - codigo: LIA-040-ROT
+      nome: Lia Rotas
+      descricao: Otimização de Rotas de Entrega
+      subordinado_a: LIA-010-LOG
+      modulos: [M-006, M-012]
+      servicos: S-OPS-014 a S-OPS-016
+      ciclo: 24_7
+
+  vendas:
+    - codigo: LIA-041-ATD
+      nome: Lia Atendimento
+      descricao: Atendimento ao Cliente
+      subordinado_a: LIA-011-VND
+      modulos: [M-001, M-002]
+      servicos: S-VND-001 a S-VND-007
+      ciclo: 24_7
+
+    - codigo: LIA-042-PRC
+      nome: Lia Pricing
+      descricao: Precificação Dinâmica
+      subordinado_a: LIA-011-VND
+      modulos: [M-004, M-005]
+      servicos: S-VND-008 a S-VND-014
+      ciclo: 24_7
